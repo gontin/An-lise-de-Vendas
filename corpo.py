@@ -3,14 +3,7 @@ produtos = []
 
 
 
-mev = float('inf')
-mav = -1
-for produto in produtos:
-    if produto['quantidade'] > mav:
-        produto['nome'] = mav
-    if produto['quantidade'] < mev:
-        produto['nome'] = mev
+mais_vendido = max(produtos, key=lambda p: p['quantidade'])
+menos_vendido = min(produtos, key=lambda p: p['quantidade'])
 
-
-print(f"produto menos vendido: {mev}")
-print(f"produto mais vendido: {mav}")
+print(f"mais vendido: {mais_vendido}\nMenos vendido: {menos_vendido}")
